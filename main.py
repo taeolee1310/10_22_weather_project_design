@@ -14,6 +14,7 @@ API = {
     "current": "https://api.openweathermap.org/data/2.5/weather",  # 🔌 현재 날씨(체감온도)
     "forecast": "https://api.openweathermap.org/data/2.5/forecast",  # 🔌 3시간 예보(강수확률)
     "air": "https://api.openweathermap.org/data/2.5/air_pollution",  # 🔌 대기질(AQI 1~5)
+    "air_forecast": "https://api.openweathermap.org/data/2.5/air_pollution/forecast",  # 🔌 시간별 대기질 예보
 }
 
 CITY = "Seoul,KR"
@@ -121,7 +122,7 @@ def pick_slot():
     hour = datetime.now(ZoneInfo("Asia/Seoul")).hour
     if hour < 11:
         return "morning"
-    if hour < 16:
+    if hour < 17:
         return "lunch"
     return "evening"
 
